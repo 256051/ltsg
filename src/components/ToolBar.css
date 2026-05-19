@@ -1,0 +1,62 @@
+/* 道具栏样式 */
+.tool-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.tool-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.tool-list {
+  display: flex;
+  gap: 15px;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 70px;
+}
+
+.tool-item:hover:not(.disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-color: #FFD700;
+}
+
+.tool-item:active:not(.disabled) {
+  transform: translateY(0);
+}
+
+.tool-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tool-emoji {
+  font-size: 24px;
+}
+
+.tool-name {
+  font-size: 12px;
+  color: #333;
+  font-weight: 500;
+}
+
+.tool-count {
+  font-size: 11px;
+  color: #888;
+}

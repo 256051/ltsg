@@ -1,0 +1,70 @@
+/* 方块基础样式 */
+.block {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 28px;
+  cursor: default;
+  user-select: none;
+  transition: all 0.15s ease;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.block.clickable {
+  cursor: pointer;
+}
+
+.block.clickable:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.block.clickable:active {
+  transform: scale(0.95);
+}
+
+.block.blocked {
+  opacity: 0.7;
+  filter: brightness(0.9);
+}
+
+.block.removed {
+  display: none;
+}
+
+/* 消除动画 */
+.block.removing {
+  animation: blockRemove 0.3s ease-out forwards;
+}
+
+@keyframes blockRemove {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* 点击高亮 */
+.block.selected {
+  animation: blockSelect 0.2s ease-out;
+  box-shadow: 0 0 0 3px #FFD700, 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+@keyframes blockSelect {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.9); }
+  100% { transform: scale(1.05); }
+}
